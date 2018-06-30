@@ -7,4 +7,9 @@ bot.on("ready", function() {
 	console.log("Le bot a ete connecte")
 })
 
+bot.on ("guildMemberAdd", member => {
+	member.guild.channels.find("name", "bienvenue").send('Un anti-arnaqueur est aparue ! Bienvenue sur Anti-Arnaque PVE !')
+
+});
+
 bot.login(process.env.TOKEN);
