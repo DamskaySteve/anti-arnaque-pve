@@ -8,7 +8,7 @@ bot.on("ready", function() {
 })
 
 bot.on ("guildMemberAdd", member => {
-	member.guild.channels.find("name", "bienvenue").send(':fire: $(member.user.username) a spawn ! Un anti-arnaqueur est aparue ! Bienvenue sur Anti-Arnaque PVE !')
+	member.guild.channels.find("name", "bienvenue").send(':fire: Un anti-arnaqueur a spawn !:scar: Bienvenue sur Anti-Arnaque PVE !:raven:')
 })
 
 bot.login(process.env.TOKEN);
