@@ -27,6 +27,7 @@ bot.on('message', message =>{
 	.setFooter("Menu d'aide - Fortnite [FR] Pve")
 	message.channel.sendMessage(help_embed);
 	console.log("Help command")
-}
+    }
+});
 
 bot.login(process.env.TOKEN);
