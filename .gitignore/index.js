@@ -13,9 +13,9 @@ bot.on ("guildMemberAdd", member => {
 
 bot.on('message', message => {
     
-	if (message.content === "!clap")
+	if (message.content === "!clap"){
         	message.reply("Clap des mains ! :clap: :clap: :clap:");
-   	     	console.log("Commande clap salut faite !")
+   	     	console.log("Commande clap salut faite !");
     	}
 	
     	if(message.content === prefix + "help"){
