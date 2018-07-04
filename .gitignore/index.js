@@ -86,7 +86,7 @@ bot.on('message', message => {
 		let args = message.content.split(" ").slice(1);
 		let thingToEcho = args.join(" ")
 		let embed = new Discord.RichEmbed()
-			.setDescription("**Sondage**")
+			.setDescription("**Sondage** @everyone")
 			.addField(thingToEcho, "Repondre avec :white_check_mark: ou :x:")
 			.setColor('#551EEC')
 		message.channel.send(embed)
