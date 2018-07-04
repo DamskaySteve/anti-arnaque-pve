@@ -12,6 +12,85 @@ bot.on ("guildMemberAdd", member => {
 })
 
 bot.on('message', message => {
+
+	if(message.content === 'Salut') {
+		message.reply('Salut ✋')
+	}
+
+	if(message.content === '!clap') {
+		message.reply('applaudit !👏👏👏')
+	}
+
+	if(message.content === 'xD') {
+		message.reply(':)')
+	}
+
+	if(message.content === 'Damskay') {
+		message.reply('Ouep ? Tu peux lui poser une questions sur #❕aide❕')
+	}
+
+	if(message.content === 'bravo') {
+		message.reply('Oh ! Merci, merci !')
+	}
+
+	if(message.content === 'Qui joue') {
+		message.reply('Moi ! Je veux jouer avec toi !')
+	}
+
+	if(message.content === 'Qui joue ?') {
+		message.reply('Moi ! Je veux jouer avec toi !')
+	}
+
+	if(message.content === 'qui joue') {
+		message.reply('Moi ! Je veux jouer avec toi !')
+	}
+	
+	if(message.content === 'qui joue ?') {
+		message.reply('Moi ! Je veux jouer avec toi !')
+	}
+
+	if(message.content === 'ki joue') {
+		message.reply('Moi ! Je veux jouer avec toi !')
+	}
+
+	if(message.content === 'a+') {
+		message.reply('A+ ! 👋')
+	}
+
+	if(message.content === 'Good bye') {
+		message.reply('Ciao !👋')
+	}
+
+	if(message.content === 'A+') {
+		message.reply('A+ ! 👋')
+	}
+
+	if(message.content === 'cool le bot') {
+		message.reply('Merci ! Damskay qui la coder')
+	}
+	
+	if(message.content === 'cool le bot') {
+		message.reply('Merci ! Damskay qui la coder')
+	}
+
+	if(message.content === 'sa va') {
+		message.reply("Je vais toujours bien, je suis un robot !")
+	}
+
+	if(message.content === '!invite') {
+		message.reply("Yep ! Tu peux partager ce lien a tout le monde ! https://discord.gg/6bHyYR4 !")
+	}
+
+	if message.content === '!help') {
+		var embed = new Discord.RichEmbed()
+			.setTitle("Aide")
+			.setDescription("Lite des commandes du bot")
+			.addField("")
+	}
+
+	
+
+
     
 	if(message.content.startsWith("!sondage")) {
 		let args = message.content.split(" ").slice(1);
@@ -29,6 +108,8 @@ bot.on('message', message => {
 
 	}
 })
+
+
 
 
 bot.login(process.env.TOKEN);
