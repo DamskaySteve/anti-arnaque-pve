@@ -59,7 +59,7 @@ bot.on('message', message => {
 
 	if(message.content === 'Good bye') {
 		message.reply('Ciao !👋')
-	}
+        }
 
 	if(message.content === 'A+') {
 		message.reply('A+ ! 👋')
@@ -80,16 +80,6 @@ bot.on('message', message => {
 	if(message.content === '!invite') {
 		message.reply("Yep ! Tu peux partager ce lien a tout le monde ! https://discord.gg/6bHyYR4 !")
 	}
-
-	if message.content === '!help') {
-		var embed = new Discord.RichEmbed()
-			.setTitle("Aide")
-			.setDescription("Lite des commandes du bot")
-			.addField("")
-	}
-
-	
-
 
     
 	if(message.content.startsWith("!sondage")) {
