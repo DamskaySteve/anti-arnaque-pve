@@ -76,6 +76,14 @@ bot.on('message', message => {
 	if(message.content === 'sa va') {
 		message.reply("Je vais toujours bien, je suis un robot !")
 	}
+	
+	if(message.content === 'wsh') {
+		message.reply("Wsh la cité !")
+	}
+	
+	if(message.content === 'Wsh') {
+		message.reply("Wsh frere !")
+	}
 
 	if(message.content === '!invite') {
 		message.reply("Yep ! Tu peux partager ce lien a tout le monde ! https://discord.gg/6bHyYR4 !")
