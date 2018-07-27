@@ -7,18 +7,11 @@ bot.on("ready", function() {
 	console.log("Le bot a ete connecte")
 })
 
+bot.on('messageReactionAdd', (reaction, user) =>) {
+         if(reaction.emoji.name === 🎉)
+		let role = msg.guild.roles.find('name', 'Sauver le monde')
+}
 
-client.on("guildMemberAdd", membre => {
-	const bvn = member.guild.channels.find(m => m.name === "✋bienvenue✋")
-	if (!bvn) return;
-	const embed = new Discord.RichEmbed()
-	.setColor('#00cc66')
-	.setTitle("Nouveau membre !")
-	.addField("Un nouveau commandant est apparue ! Bienvenue [${member.user.tag}]")
-	.setDescription("Bonne chance dans ton aventure !")
-	.setFooter('Vindertech.exe')
-	bvn.sen(embed)
-})
 
 bot.on('message', message => {
 
