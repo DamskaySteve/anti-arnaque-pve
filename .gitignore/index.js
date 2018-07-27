@@ -9,6 +9,10 @@ bot.on("ready", function() {
 
 bot.on ("guildMemberAdd", member => {
 	member.guild.channels.find("name", "✋bienvenue✋").send(':fire: Un membre a spawn ! Bienvenue sur Fortnite [FR] PVE !  ')
+		.then(function (message) {
+			message.react("🎉")
+		}).catch(function() {
+		});
 })
 
 bot.on('message', message => {
