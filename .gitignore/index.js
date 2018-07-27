@@ -7,10 +7,23 @@ bot.on("ready", function() {
 	console.log("Le bot a ete connecte")
 })
 
-bot.on('messageReactionAdd', (reaction, user) =>) {
-         if(reaction.emoji.name === 🎉)
-		let role = msg.guild.roles.find('name', 'Sauver le monde')
-}
+client.on('message', async message => {
+	if (message.content === '!reaction-role') {
+		const reactmessage = await message.channel.send('React with 👌 to get your role!');
+		await reactmessage.react('👌');
+
+		const filter = (reaction, user) => reaction.emoji.name === '👌' && !user.bot;
+		const collector = reactmessage.createReactionCollector(filter, { time: 15000 });
+
+		collector.on('collect', async reaction => {
+			const user = reaction.users.last();
+			const guild = reaction.message.guild;
+			const member = guild.member(user) || await guild.fetchMember(user);
+			member.addRole('Membre');
+			console.log(`Added the role to ${member.displayName}`);
+		});
+	}
+});
 
 
 bot.on('message', message => {
