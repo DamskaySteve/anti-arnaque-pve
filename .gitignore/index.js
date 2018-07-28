@@ -96,7 +96,7 @@ bot.on('message', message => {
 		.addField(":xbox: | **XBOX**")
 		.addField(":switch: | **SWITCH**")
 		message.channel.sendMessage(setrole);
-		console.log("SETROLE DEFINIT PAR $user !")
+		console.log("SETROLE DEFINIT")
 	}
 
 
