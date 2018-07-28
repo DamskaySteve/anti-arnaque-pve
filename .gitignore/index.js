@@ -9,6 +9,26 @@ bot.on("ready", function() {
 	console.log("Le bot a ete connecte")
 })
 
+bot.on("guildMemberAdd", member => {
+
+	let salon = member.guild.channels.find("name", "✋accueil✋")
+		 var bvn = new Discord.RichEmbed()
+		 .setColor("#5ef209")
+		 .setTitle(`**Bienvenue a  ${member.user.username} sur Fortnite [FR] Pve ! Amuse toi bien ici ! :tada: **`);
+		 console.log("SETROLE DEFINIT")
+	 salon.send(bvn)
+	 });
+
+bot.on("guildMemberRemove", member => {
+
+		let salon = member.guild.channels.find("name", "✋accueil✋")
+			 var bvn = new Discord.RichEmbed()
+			 .setColor("#f20909")
+			 .setTitle(`**Aurevoir a ${member.user.username} sur Fortnite [FR] Pve ! Bonne chance dans ton aventure ! :wave: **`);
+			 console.log("SETROLE DEFINIT")
+		 salon.send(bvn)
+		 });
+
 
 bot.on('message', message => {
 
@@ -72,6 +92,10 @@ bot.on('message', message => {
 		message.reply('Merci ! Damskay qui la coder')
 	}
 
+	if(message.content === '!stop') {
+		message.reply('Arret du bot...')
+	}
+
 	if(message.content === 'sa va') {
 		message.reply("Je vais toujours bien, je suis un robot !")
 	}
@@ -87,20 +111,15 @@ bot.on('message', message => {
 	if(message.content === '!invite') {
 		message.reply("Yep ! Tu peux partager ce lien a tout le monde ! https://discord.gg/6bHyYR4 !")
 	}
-	
+
 	if(message.content === prefix + "setuprole"){
 		var setrole = new Discord.RichEmbed()
 		.setColor("#3774e5")
-		.setTitle("**Reagie avec l'emoticone qui convient avec ta plateforme**")
-		.addBlankField
-		.addField(":desktop: | **PC**")
-		.addField(":playstation: | **PS4** ")
-		.addField(":xbox: | **XBOX**")
-		.addField(":switch: | **SWITCH**")
+		.setTitle("**Pour avoir accés au salons d'échange du serveur, clique sur la reaction ci dessous**")
+		.addField("Deviens un echangeur !" , " :recycle:  **Echange** ")
 		message.channel.sendMessage(setrole);
 		console.log("SETROLE DEFINIT")
 	}
-
 
     
 	if(message.content.startsWith("!sondage")) {
