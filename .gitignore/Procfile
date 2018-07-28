@@ -1,2 +1,1 @@
-worker: node index
-worker: node roleReact.js
+worker: start launch.bat
