@@ -85,6 +85,20 @@ bot.on('message', message => {
 	if(message.content === '!invite') {
 		message.reply("Yep ! Tu peux partager ce lien a tout le monde ! https://discord.gg/6bHyYR4 !")
 	}
+	
+	if(message.content === prefix + "setuprole"){
+		var setrole = new Discord.RichEmbed()
+		.setColor("#3774e5")
+		.setTitle("**Reagie avec l'emoticone qui convient avec ta plateforme**")
+		.addBlankField
+		.addField(":desktop: | **PC**")
+		.addField(":playstation: | **PS4** ")
+		.addField(":xbox: | **XBOX**")
+		.addField(":switch: | **SWITCH**")
+		message.channel.sendMessage(setrole);
+		console.log("SETROLE DEFINIT PAR $user !")
+	}
+
 
     
 	if(message.content.startsWith("!sondage")) {
