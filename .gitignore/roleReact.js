@@ -6,7 +6,7 @@ const setupCMD = "!createrolemessage"
 let initialMessage = `**Choisissez votre mode de jeu**`;
 const roles = ["Sauver le monde", "Battle Royale"];
 const reactions = ["🌎", ":Scar:465452103931002882"];
-const botToken = "process.env.Token"; 
+const botToken = "process.env.TOKEN"; 
 
 //Load up the bot...
 const Discord = require('discord.js');
