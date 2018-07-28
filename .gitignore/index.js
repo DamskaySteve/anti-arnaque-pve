@@ -5,7 +5,7 @@ var bot = new Discord.Client();
 var prefix = "!";
 
 bot.on("ready", function() {
-	bot.user.setGame("Fortnite FR [BETA]");
+	bot.user.setGame("Fortnite [FR] Pve");
 	console.log("Le bot a ete connecte")
 })
 
