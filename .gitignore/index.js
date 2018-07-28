@@ -2,6 +2,8 @@ const Discord = require("discord.js");
 
 var bot = new Discord.Client();
 
+var prefix = "!";
+
 bot.on("ready", function() {
 	bot.user.setGame("Fortnite FR [BETA]");
 	console.log("Le bot a ete connecte")
