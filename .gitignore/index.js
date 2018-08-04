@@ -1,15 +1,15 @@
 const Discord = require("discord.js");
 
-var bot = new Discord.Client();
+var client = new Discord.Client();
 
 var prefix = "!"
 
-bot.on("ready", function() {
-	bot.user.setActivity("Fortnite [FR] Pve");
-	console.log("Le bot a ete connecte")
+client.on("ready", function() {
+	client.user.setActivity("Fortnite [FR] Pve");
+	console.log("Le client a ete connecte")
 })
 
-bot.on("guildMemberAdd", member => {
+client.on("guildMemberAdd", member => {
 
 	let salon = member.guild.channels.find("name", "✋accueil✋")
 		 var bvn = new Discord.RichEmbed()
@@ -19,7 +19,7 @@ bot.on("guildMemberAdd", member => {
 	 salon.send(bvn)
 	 });
 
-bot.on("guildMemberRemove", member => {
+client.on("guildMemberRemove", member => {
 
 		let salon = member.guild.channels.find("name", "✋accueil✋")
 			 var bvn = new Discord.RichEmbed()
@@ -30,9 +30,9 @@ bot.on("guildMemberRemove", member => {
 		 });
 
 
-bot.on('message', message => {
+client.on('message', message => {
 
-	if(message.author.bot) return
+	if(message.author.client) return
 
 	if(message.content == 'Salut') {
 		message.reply('Salut ✋')
@@ -49,7 +49,7 @@ bot.on('message', message => {
 	}
 
 
-	if(message.content.includes('cool le bot')) {
+	if(message.content.includes('cool le client')) {
 		message.reply('Merci ! Damskay qui la coder & vanerac 😉')
 	}
 
@@ -72,7 +72,7 @@ bot.on('message', message => {
 		if(command === 'stop') {
 			if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.reply(`Tu n'as pas la permission d'executer cette commande`)
 			message.reply('Arret du bot...')
-			bot.destroy()
+			client.destroy()
 		}
 
 		if(command == "invite"){
@@ -101,10 +101,14 @@ bot.on('message', message => {
 				message.react("❌")
 			})
 		}
+
+		if(command == "ping"){
+			message.channel.send(`Ping est de: ${client.ping}`).then(m =>{m.delete(5000)})
+		}
 	}
 })
 
 
 
 
-bot.login(process.env.TOKEN);//
+client.login(process.env.TOKEN);//
