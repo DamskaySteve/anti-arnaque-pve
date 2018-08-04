@@ -2,10 +2,10 @@ const Discord = require("discord.js");
 
 var bot = new Discord.Client();
 
-var prefix = "!";
+var prefix = "!"
 
 bot.on("ready", function() {
-	bot.user.setGame("Fortnite [FR] Pve");
+	bot.user.setActivity("Fortnite [FR] Pve");
 	console.log("Le bot a ete connecte")
 })
 
@@ -32,35 +32,36 @@ bot.on("guildMemberRemove", member => {
 
 bot.on('message', message => {
 
-	if(message.content === 'Salut') {
-		message.reply('Salut ✋')
-	}
+	// if(message.content === 'Salut') {
+	// 	message.reply('Salut ✋')
+	// }
+	//
+	//
+	// if(message.content === 'ki joue' || message.content === 'qui joue ?' || message.content === 'Qui joue' || message.content === 'Qui joue ?' || message.content === 'qui joue') {
+	// 	message.reply('Moi ! Je veux jouer avec toi !')
+	// }
+	//
+	//
+	// if(message.content === 'a+' || message.content === 'A+' || 'Good bye') {
+	// 	message.reply('A+ ! 👋')
+	// }
+	//
+	//
+	// if(message.content === 'cool le bot') {
+	// 	message.reply('Merci ! Damskay qui la coder & vanerac 😉')
+	// }
+	//
+	//
+	// if(message.content === 'wsh' || message.content === 'Wsh') {
+	// 	message.reply("Wsh la cité !")
+	// }
 
 
-	if(message.content === 'ki joue' || message.content === 'qui joue ?' || message.content === 'Qui joue' || message.content === 'Qui joue ?' || message.content === 'qui joue') {
-		message.reply('Moi ! Je veux jouer avec toi !')
-	}
+	if(message.content.startsWith(prefix)){
+		const args = message.content.slice(prefix.length).trim().split(/ +/g);
+      const command = args.shift().toLowerCase();
 
-
-	if(message.content === 'a+' || message.content === 'A+' || 'Good bye') {
-		message.reply('A+ ! 👋')
-	}
-
-
-	if(message.content === 'cool le bot') {
-		message.reply('Merci ! Damskay qui la coder & vanerac 😉')
-	}
-
-
-	if(message.content === 'wsh' || message.content === 'Wsh') {
-		message.reply("Wsh la cité !")
-	}
-
-
-	if(message.conent.startsWith(prefix)){
-		const args = message.content.slice(server_settings[message.guild.id].server.prefix.length).trim().split(/ +/g);
-	  const command = args.shift().toLowerCase();
-
+		console.log(command)
 		message.delete()
 
 		if(command == "clap"){
@@ -68,9 +69,9 @@ bot.on('message', message => {
 		}
 
 		if(command === 'stop') {
-			if(!message.guild.member(message.author).hasPerission("ADMINISTRATOR")) return message.reply(`Tu n'as pas la permission d'executer cette commande`)
+			if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.reply(`Tu n'as pas la permission d'executer cette commande`)
 			message.reply('Arret du bot...')
-			client.destroy()
+			bot.destroy()
 		}
 
 		if(command == "invite"){
@@ -103,4 +104,4 @@ bot.on('message', message => {
 
 
 
-bot.login(process.env.TOKEN);
+bot.login(process.env.TOKEN);// 
