@@ -32,29 +32,31 @@ bot.on("guildMemberRemove", member => {
 
 bot.on('message', message => {
 
-	// if(message.content === 'Salut') {
-	// 	message.reply('Salut ✋')
-	// }
-	//
-	//
-	// if(message.content === 'ki joue' || message.content === 'qui joue ?' || message.content === 'Qui joue' || message.content === 'Qui joue ?' || message.content === 'qui joue') {
-	// 	message.reply('Moi ! Je veux jouer avec toi !')
-	// }
-	//
-	//
-	// if(message.content === 'a+' || message.content === 'A+' || 'Good bye') {
-	// 	message.reply('A+ ! 👋')
-	// }
-	//
-	//
-	// if(message.content === 'cool le bot') {
-	// 	message.reply('Merci ! Damskay qui la coder & vanerac 😉')
-	// }
-	//
-	//
-	// if(message.content === 'wsh' || message.content === 'Wsh') {
-	// 	message.reply("Wsh la cité !")
-	// }
+	if(message.author.bot) return
+
+	if(message.content == 'Salut') {
+		message.reply('Salut ✋')
+	}
+
+
+	if(message.content.includes('ki joue' || 'qui joue ?' || 'Qui joue' || 'Qui joue ?' || 'qui joue')) {
+		message.reply('Moi ! Je veux jouer avec toi !')
+	}
+
+
+	if(message.content.includes('a+' || "A+" || "Good bye")) {
+		message.reply('A+ ! 👋')
+	}
+
+
+	if(message.content.includes('cool le bot')) {
+		message.reply('Merci ! Damskay qui la coder & vanerac 😉')
+	}
+
+
+	if(message.content.includes('wsh' || 'Wsh')) {
+		message.reply("Wsh la cité !")
+	}
 
 
 	if(message.content.startsWith(prefix)){
