@@ -36,106 +36,67 @@ bot.on('message', message => {
 		message.reply('Salut ✋')
 	}
 
-	if(message.content === '!clap') {
-		message.reply('applaudit !👏👏👏')
-	}
 
-	if(message.content === 'xD') {
-		message.reply(':)')
-	}
-
-	if(message.content === 'Damskay') {
-		message.reply('Ouep ? Tu peux lui poser une questions sur #❕aide❕')
-	}
-
-	if(message.content === 'bravo') {
-		message.reply('Oh ! Merci, merci !')
-	}
-
-	if(message.content === 'Qui joue') {
+	if(message.content === 'ki joue' || message.content === 'qui joue ?' || message.content === 'Qui joue' || message.content === 'Qui joue ?' || message.content === 'qui joue') {
 		message.reply('Moi ! Je veux jouer avec toi !')
 	}
 
-	if(message.content === 'Qui joue ?') {
-		message.reply('Moi ! Je veux jouer avec toi !')
-	}
 
-	if(message.content === 'qui joue') {
-		message.reply('Moi ! Je veux jouer avec toi !')
-	}
-	
-	if(message.content === 'qui joue ?') {
-		message.reply('Moi ! Je veux jouer avec toi !')
-	}
-
-	if(message.content === 'ki joue') {
-		message.reply('Moi ! Je veux jouer avec toi !')
-	}
-
-	if(message.content === 'a+') {
+	if(message.content === 'a+' || message.content === 'A+' || 'Good bye') {
 		message.reply('A+ ! 👋')
 	}
 
-	if(message.content === 'Good bye') {
-		message.reply('Ciao !👋')
-        }
-
-	if(message.content === 'A+') {
-		message.reply('A+ ! 👋')
-	}
 
 	if(message.content === 'cool le bot') {
-		message.reply('Merci ! Damskay qui la coder')
-	}
-	
-	if(message.content === 'cool le bot') {
-		message.reply('Merci ! Damskay qui la coder')
+		message.reply('Merci ! Damskay qui la coder & vanerac 😉')
 	}
 
-	if(message.content === '!stop') {
-		message.reply('Arret du bot...')
-	}
 
-	if(message.content === 'sa va') {
-		message.reply("Je vais toujours bien, je suis un robot !")
-	}
-	
-	if(message.content === 'wsh') {
+	if(message.content === 'wsh' || message.content === 'Wsh') {
 		message.reply("Wsh la cité !")
 	}
-	
-	if(message.content === 'Wsh') {
-		message.reply("Wsh frere !")
-	}
 
-	if(message.content === '!invite') {
-		message.reply("Yep ! Tu peux partager ce lien a tout le monde ! https://discord.gg/6bHyYR4 !")
-	}
 
-	if(message.content === prefix + "setuprole"){
-		var setrole = new Discord.RichEmbed()
-		.setColor("#3774e5")
-		.setTitle("**Pour avoir accés au salons d'échange du serveur, clique sur la reaction ci dessous**")
-		.addField("Deviens un echangeur !" , " :recycle:  **Echange** ")
-		message.channel.sendMessage(setrole);
-		console.log("SETROLE DEFINIT")
-	}
+	if(message.conent.startsWith(prefix)){
+		const args = message.content.slice(server_settings[message.guild.id].server.prefix.length).trim().split(/ +/g);
+	  const command = args.shift().toLowerCase();
 
-    
-	if(message.content.startsWith("!sondage")) {
-		let args = message.content.split(" ").slice(1);
-		let thingToEcho = args.join(" ")
-		let embed = new Discord.RichEmbed()
-			.setDescription("**Sondage** @everyone")
-			.addField(thingToEcho, "Repondre avec :white_check_mark: ou :x:")
-			.setColor('#551EEC')
-		message.channel.send(embed)
-		.then(function (message) {
-			message.react("✅")
-			message.react("❌")
-		}).catch(function() {
-		});
+		message.delete()
 
+		if(command == "clap"){
+			message.reply('applaudit !👏👏👏')
+		}
+
+		if(command === 'stop') {
+			if(!message.guild.member(message.author).hasPerission("ADMINISTRATOR")) return message.reply(`Tu n'as pas la permission d'executer cette commande`)
+			message.reply('Arret du bot...')
+			client.destroy()
+		}
+
+		if(command == "invite"){
+			message.reply("Yep ! Tu peux partager ce lien a tout le monde ! https://discord.gg/6bHyYR4 !")
+		}
+
+		if(command == "setuprole"){
+			var setrole = new Discord.RichEmbed()
+			.setColor("#3774e5")
+			.setTitle("**Pour avoir accés au salons d'échange du serveur, clique sur la reaction ci dessous**")
+			.addField("Deviens un echangeur !" , " :recycle:  **Echange** ");
+			message.channel.sendMessage(setrole)
+			console.log("SETROLE DEFINIT")
+		}
+
+		if(command == "sondage"){
+			let embed = new Discord.RichEmbed()
+				.setDescription("**Sondage** @everyone")
+				.addField(args, "Repondre avec :white_check_mark: ou :x:")
+				.setColor('#551EEC');
+			message.channel.send(embed)
+			.then(function (message) {
+				message.react("✅")
+				message.react("❌")
+			})
+		}
 	}
 })
 
