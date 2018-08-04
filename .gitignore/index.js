@@ -63,7 +63,6 @@ bot.on('message', message => {
 		const args = message.content.slice(prefix.length).trim().split(/ +/g);
       const command = args.shift().toLowerCase();
 
-		console.log(command)
 		message.delete()
 
 		if(command == "clap"){
@@ -90,6 +89,8 @@ bot.on('message', message => {
 		}
 
 		if(command == "sondage"){
+				if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.reply(`Tu n'as pas la permission d'executer cette commande`)
+				if(args.length == 0) return message.reply(`Manque un argument`)
 			let embed = new Discord.RichEmbed()
 				.setDescription("**Sondage** @everyone")
 				.addField(args, "Repondre avec :white_check_mark: ou :x:")
@@ -106,4 +107,4 @@ bot.on('message', message => {
 
 
 
-bot.login(process.env.TOKEN);// 
+bot.login(process.env.TOKEN);//
