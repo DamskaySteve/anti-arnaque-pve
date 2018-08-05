@@ -34,7 +34,7 @@ bot.on('message', message => {
 
 	if(message.author.bot) return
 
-	if(message.content == 'Salut') {
+	if(message.content == 'Salut' || 'salut' || 'slt' || 'Slt')) {
 		message.reply('Salut ✋')
 	}
 
@@ -76,7 +76,7 @@ bot.on('message', message => {
 		}
 
 		if(command == "invite"){
-			message.reply("Yep ! Tu peux partager ce lien a tout le monde ! https://discord.gg/6bHyYR4 !")
+			message.reply("Yep ! Tu peux partager ce lien a tout le monde ! https://discord.gg/wzRmvBQ !")
 		}
 
 		if(command == "setuprole"){
