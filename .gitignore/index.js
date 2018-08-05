@@ -101,6 +101,10 @@ bot.on('message', message => {
 				message.react("❌")
 			})
 		}
+
+		if(command == "ping"){
+			message.channel.send("Le Ping l'API est de `"+ bot.ping+"` ms")
+		}
 	}
 })
 
