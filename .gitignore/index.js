@@ -34,17 +34,18 @@ bot.on('message', message => {
 
 	if(message.author.bot) return
 
-	if(message.content == 'Salut' || 'salut' || 'slt' || 'Slt')) {
+
+	if(['Salut', 'salut'].includes(message.content)) {
+
 		message.reply('Salut ✋')
 	}
 
-
-	if(message.content.includes('ki joue' || 'qui joue ?' || 'Qui joue' || 'Qui joue ?' || 'qui joue')) {
+	if(['ki joue' , 'qui joue ?', 'Qui joue', 'Qui joue ?', 'qui joue'].includes(message.content)) {
 		message.reply('Moi ! Je veux jouer avec toi !')
 	}
 
 
-	if(message.content.includes('a+' || "A+" || "Good bye")) {
+	if(['a+' , "A+" , "Good bye"].includes(message.content)) {
 		message.reply('A+ ! 👋')
 	}
 
@@ -54,7 +55,7 @@ bot.on('message', message => {
 	}
 
 
-	if(message.content.includes('wsh' || 'Wsh')) {
+	if(['wsh' , 'Wsh'].includes(message.content)) {
 		message.reply("Wsh la cité !")
 	}
 
