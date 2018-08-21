@@ -2,7 +2,11 @@ const Discord = require("discord.js");
 
 var bot = new Discord.Client();
 
-var prefix = "!"
+var prefix = "!
+
+// LOUL Ce bot est heberger alleur rip
+
+bot.destroy()
 
 bot.on("ready", function() {
 	bot.user.setActivity("Fortnite [FR] Pve");
