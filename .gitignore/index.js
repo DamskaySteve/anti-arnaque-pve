@@ -4,9 +4,9 @@ var bot = new Discord.Client();
 
 var prefix = "!
 
-// LOUL Ce bot est heberger alleur rip
+// LOUL Ce bot est heberger ailleur rip
 
-bot.destroy()
+
 
 bot.on("ready", function() {
 	bot.user.setActivity("Fortnite [FR] Pve");
