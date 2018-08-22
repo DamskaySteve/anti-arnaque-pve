@@ -14,7 +14,7 @@ bot.on("ready", function() {
 
 bot.on("guildMemberAdd", member => {
 
-	let salon = member.guild.channels.find("name", "✋accueil✋")
+	let salon = member.guild.channels.find("name", "✋bienvenue✋")
 		 var bvn = new Discord.RichEmbed()
 		 .setColor("#5ef209")
 		 .setTitle(`**Bienvenue a  ${member.user.username} sur Fortnite [FR] Pve ! Amuse toi bien ici ! :tada: **`);
@@ -24,7 +24,7 @@ bot.on("guildMemberAdd", member => {
 
 bot.on("guildMemberRemove", member => {
 
-		let salon = member.guild.channels.find("name", "✋accueil✋")
+		let salon = member.guild.channels.find("name", "✋bienvenue✋")
 			 var bvn = new Discord.RichEmbed()
 			 .setColor("#f20909")
 			 .setTitle(`**Aurevoir a ${member.user.username} sur Fortnite [FR] Pve ! Bonne chance dans ton aventure ! :wave: **`);
