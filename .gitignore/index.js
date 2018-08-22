@@ -2,9 +2,8 @@ const Discord = require("discord.js");
 
 var bot = new Discord.Client();
 
-var prefix = "!
+var prefix = "!"
 
-// LOUL Ce bot est heberger ailleur rip
 
 
 
@@ -82,18 +81,10 @@ bot.on('message', message => {
 		}
 
 		if(command == "invite"){
-			message.reply("Yep ! Tu peux partager ce lien a tout le monde ! https://discord.gg/wzRmvBQ !")
+			message.reply("**MAINTENANCE EN COURS**")
 			console.log("Invitation demander")
 		}
 
-		if(command == "setuprole"){
-			var setrole = new Discord.RichEmbed()
-			.setColor("#3774e5")
-			.setTitle("**Pour avoir accés au salons d'échange du serveur, clique sur la reaction ci dessous**")
-			.addField("Deviens un echangeur !" , " :recycle:  **Echange** ");
-			message.channel.sendMessage(setrole)
-			console.log("Setrole definit")
-		}
 
 		if(command == "help"){
 			var help = new Discord.RichEmbed()
@@ -102,27 +93,18 @@ bot.on('message', message => {
 			.addField("!ping" , " Affiche la latence du bot")
 			.addField("!clap", "Applaudit et mentionne")
 			.addField("!invite", "Te donne un lien d'invitation")
+			.addField("!ftn", "Stats battle royale et pve")
+			.addField("!say", "Faire dire au bot un message")
+			.addField("!report", "Signale un utilisateur")
+			.addField("!serverinfo", "Obtient des information sur le serveur")
+			.addField("!botinfo", "Obtient des informations sur le bot")
+			.addField("**LE BOT EST EN MAINTENANCE !**, "Les commandes du bots ne sont pas disponible pour maintenance")
 			message.channel.send(help)
 			console.log("Commande !help demander")
 		}
 
-
-		if(command == "sondage"){
-				if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.reply(`Tu n'as pas la permission d'executer cette commande`)
-				if(args.length == 0) return message.reply(`Manque un argument`)
-			let embed = new Discord.RichEmbed()
-				.setDescription("**Sondage** @everyone")
-				.addField(args, "Repondre avec :white_check_mark: ou :x:")
-				.setColor('#551EEC');
-			message.channel.send(embed)
-			.then(function (message) {
-				message.react("✅")
-				message.react("❌")
-			})
-		}
-
 		if(command == "ping"){
-			message.channel.send("Le Ping l'API est de `"+ bot.ping+"` ms")
+			message.channel.send("**MAINTENANCE EN COURS** : Le Ping l'API est de `"+ bot.ping+"` ms")
 		}
 	}
 })
