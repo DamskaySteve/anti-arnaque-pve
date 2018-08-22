@@ -98,7 +98,7 @@ bot.on('message', message => {
 			.addField("!report", "Signale un utilisateur")
 			.addField("!serverinfo", "Obtient des information sur le serveur")
 			.addField("!botinfo", "Obtient des informations sur le bot")
-			.addField("**LE BOT EST EN MAINTENANCE !**, "Les commandes du bots ne sont pas disponible pour maintenance")
+			.addField("**LE BOT EST EN MAINTENANCE !**", "Les commandes du bots ne sont pas disponible pour maintenance")
 			message.channel.send(help)
 			console.log("Commande !help demander")
 		}
