@@ -1,5 +1,8 @@
 const Discord = require("discord.js");
 
+// BOT ARCHIVER
+
+
 var bot = new Discord.Client();
 
 var prefix = "!"
@@ -12,25 +15,7 @@ bot.on("ready", function() {
 	console.log("Le bot a ete connecte")
 })
 
-bot.on("guildMemberAdd", member => {
 
-	let salon = member.guild.channels.find("name", "✋bienvenue✋")
-		 var bvn = new Discord.RichEmbed()
-		 .setColor("#5ef209")
-		 .setTitle(`**Bienvenue a  ${member.user.username} sur Fortnite [FR] Pve ! Amuse toi bien ici ! :tada: **`);
-		 console.log("Commande de bienvenue executer")
-	 salon.send(bvn)
-	 });
-
-bot.on("guildMemberRemove", member => {
-
-		let salon = member.guild.channels.find("name", "✋bienvenue✋")
-			 var bvn = new Discord.RichEmbed()
-			 .setColor("#f20909")
-			 .setTitle(`**Aurevoir a ${member.user.username} sur Fortnite [FR] Pve ! Bonne chance dans ton aventure ! :wave: **`);
-			 console.log("Commande d'aurevoir executer !")
-		 salon.send(bvn)
-		 });
 
 
 bot.on('message', message => {
@@ -86,22 +71,7 @@ bot.on('message', message => {
 		}
 
 
-		if command == "help"){
-			var help = new Discord.RichEmbed()
-			.setColor("#3774e5")
-			.setTitle("**Voici mes commandes !**")
-			.addField("!ping" , " Affiche la latence du bot")
-			.addField("!clap", "Applaudit et mentionne")
-			.addField("!invite", "Te donne un lien d'invitation")
-			.addField("!ftn", "Stats battle royale et pve")
-			.addField("!say", "Faire dire au bot un message")
-			.addField("!report", "Signale un utilisateur")
-			.addField("!serverinfo", "Obtient des information sur le serveur")
-			.addField("!botinfo", "Obtient des informations sur le bot")
-			.addField("**LE BOT EST EN MAINTENANCE !**", "Les commandes du bots ne sont pas disponible pour maintenance")
-			message.channel.send(help)
-			console.log("Commande !help demander")
-		}
+"
 
 		if command == "ping"){
 			message.channel.send("**MAINTENANCE EN COURS** : Le Ping l'API est de `"+ bot.ping+"` ms")
