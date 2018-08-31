@@ -68,25 +68,25 @@ bot.on('message', message => {
       const command = args.shift().toLowerCase();
 
 
-		if(command == "clap"){
+		if command == "clap"){
 			message.reply('applaudit !👏👏👏')
 			console.log("Commande !clap demander")
 		}
 
-		if(command === 'stop') {
+		if command === 'stop') {
 			if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.reply(`Tu n'as pas la permission d'executer cette commande`)
 			message.reply('Arret du bot...')
 			console.log("Arret du bot demander")
 			bot.destroy()
 		}
 
-		if(command == "invite"){
+		if command == "invite"){
 			message.reply("**MAINTENANCE EN COURS**")
 			console.log("Invitation demander")
 		}
 
 
-		if(command == "help"){
+		if command == "help"){
 			var help = new Discord.RichEmbed()
 			.setColor("#3774e5")
 			.setTitle("**Voici mes commandes !**")
@@ -103,7 +103,7 @@ bot.on('message', message => {
 			console.log("Commande !help demander")
 		}
 
-		if(command == "ping"){
+		if command == "ping"){
 			message.channel.send("**MAINTENANCE EN COURS** : Le Ping l'API est de `"+ bot.ping+"` ms")
 		}
 	}
